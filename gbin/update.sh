@@ -13,15 +13,22 @@ echo "$gbin"
 echo "$gfs"
 echo "$egit"
 
+
 tar -cvf fs.tar.xz fs
 acrypter encrypt cry15360 fs.tar.xz fs.tar.xz.acrypt
 
+pwd
+ls
 cd "$egit"
+
+
+chmod +x ../$gfs/sync.sh
+../$gfs/sync.sh
+
+
 rm -rvf acrypt
 mkdir acrypt
 mv ../fs.tar.xz.acrypt "acrypt/fs.tar.xz.acrypt"
-
-exit
 
 
 #rsync -av --progress /home/rishu/data/smj_data smj_data
