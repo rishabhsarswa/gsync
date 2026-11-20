@@ -4,18 +4,11 @@ set -exu
 groot="$(dirname $0)/.."
 cd "$groot"
 
-egit="egit"
-gfs="fs"
-gbin="gbin"
-
-pwd
-echo "$gbin"
-echo "$gfs"
-echo "$egit"
-
+source gbin/lib.sh
 
 tar -cvf fs.tar.xz fs
 acrypter encrypt cry15360 fs.tar.xz fs.tar.xz.acrypt
+rm fs.tar.xz
 
 pwd
 ls
@@ -25,7 +18,7 @@ cd "$egit"
 chmod +x ../$gfs/sync.sh
 ../$gfs/sync.sh
 
-
+cp "../$gbin/recover.sh" .
 rm -rvf acrypt
 mkdir acrypt
 mv ../fs.tar.xz.acrypt "acrypt/fs.tar.xz.acrypt"
