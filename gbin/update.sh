@@ -29,7 +29,7 @@ mv "../$gtmp/a/fs.tar.xz.acrypt" "acrypt/fs.tar.xz.acrypt"
 
 echo "Loading data into Git ... "
 
-exit
+
 #git remote set-url origin https://rishabhsarswa:TOKEN@github.com/rishabhsarswa/docs.git
 
 
